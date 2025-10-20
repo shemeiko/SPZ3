@@ -5,6 +5,8 @@
 // Abstract implementation
 class Storage {
 public:
+    // abstract method DownloadFile
+    virtual File* DownloadFile(std::string filename) const = 0;
     // abstract method Save
     virtual std::string Save() const = 0;
 };
@@ -12,6 +14,10 @@ public:
 // Implementation of class Storage
 class CloudStorage : public Storage {
 public:
+    // download file from remote storage logic
+    virtual File* DownloadFile(std::string filename) const override {
+        // logic
+    }
     // saving file in the cloud storage logic
     virtual std::string Save() const override {
         return "cloud storage";
@@ -21,6 +27,10 @@ public:
 // Implementation of class Storage
 class LocalStorage : public Storage {
 public:
+    // download file from local storage logic
+    virtual File* DownloadFile(std::string filename) const override {
+        // logic
+    };
     // saving file in the local storage logic
     virtual std::string Save() const override {
         return "local storage";
@@ -30,6 +40,10 @@ public:
 // Implementation of class Storage
 class FTPStorage : public Storage {
 public:
+    // download file from ftp storage logic
+    virtual File* DownloadFile(std::string filename) const override {
+        // logic
+    };
     // saving file in the ftp storage logic
     virtual std::string Save() const override {
         return "ftp storage";
